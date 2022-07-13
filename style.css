@@ -17,3 +17,9 @@ body {
   background-color: #d9ffea;
   border-radius: 10px;
 }
+
+.calc-keys {
+  width: inherit;
+  height: inherit;
+  margin: 16px;
+}
