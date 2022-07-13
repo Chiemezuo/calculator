@@ -5,10 +5,12 @@ body {
 }
 
 .calculator {
-  width: 500px;
-  height: 600px;
+  width: 400px;
+  height: 550px;
   background-color: #63bda4;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .display {
@@ -19,7 +21,32 @@ body {
 }
 
 .calc-keys {
-  width: inherit;
-  height: inherit;
+  width: auto;
+  flex: 1;
   margin: 16px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.3em;
+}
+
+button {
+  border-radius: 10px;
+  background-color: #62afb7;
+}
+
+.clear {
+  grid-column: 1/3;
+}
+
+.backspace {
+  grid-column: 3/5;
+  background-color: #52F118;
+}
+
+.action {
+  background-color: #ffec47;
+}
+
+.erase {
+  background-color: #f20553;
 }
