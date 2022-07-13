@@ -2,6 +2,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Roboto', sans-serif;
 }
 
 .calculator {
@@ -32,6 +33,9 @@ body {
 button {
   border-radius: 10px;
   background-color: #62afb7;
+  font-size: larger;
+  font-weight: bold;
+  font-family: inherit;
 }
 
 .clear {
