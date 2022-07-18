@@ -34,19 +34,19 @@ equateButton.addEventListener('click', evaluate)
 
 // Operations
 const add = (x, y) => {
-  return Number.parseInt(x) + Number.parseInt(y)
+  return Math.round(((Number.parseFloat(x) + Number.parseFloat(y)) + Number.EPSILON) * 10000000) / 10000000
 }
 
 const multiply = (x, y) => {
-  return x * y
+  return Math.round(((x * y) + Number.EPSILON) * 10000000) /10000000
 }
 
 const divide = (x, y) => {
-  return Math.round(((x/y) + Number.EPSILON) * 10000) /10000
+  return Math.round(((x/y) + Number.EPSILON) * 10000000) /10000000
 }
 
 const subtract = (x, y) => {
-  return x - y
+  return Math.round(((x - y) + Number.EPSILON) * 10000000) /10000000
 }
 
 function setOperation(e) {
