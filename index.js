@@ -1,5 +1,13 @@
-// Operations
+const displayDiv = document.querySelector('.display')
+let currentlyHeldValue = 0;
 
+//number buttons
+const numberButtons = document.querySelectorAll('.number')
+for (let button of numberButtons) {
+  button.addEventListener('click', populateDisplay)
+}
+
+// Operations
 const add = (x, y) => {
   return x + y
 }
@@ -16,7 +24,7 @@ const subtract = (x, y) => {
   return x - y
 }
 
-//Operate function
+//operate function
 const operate = (operand1, operator, operand2) => {
   switch (operator) {
     case '+':
@@ -34,4 +42,11 @@ const operate = (operand1, operator, operand2) => {
     default:
       break;
   }
+}
+
+//populateDisplay function
+function populateDisplay (e) {
+  const toBeDisplayed = e.target.value
+  displayDiv.textContent = toBeDisplayed;
+  currentlyHeldValue = toBeDisplayed
 }
