@@ -16,6 +16,12 @@ clearButton.addEventListener('click', function(){
   operator = ''
 })
 
+//decimal button
+const decimalButton = document.querySelector('.dot')
+decimalButton.addEventListener('click', function() {
+  decimalButton.disabled = true
+})
+
 //number buttons
 const numberButtons = document.querySelectorAll('.number')
 for (const button of numberButtons) {
@@ -50,6 +56,7 @@ const subtract = (x, y) => {
 }
 
 function setOperation(e) {
+  decimalButton.disabled = false
   consecutiveOperator = true
   if (operator && e.target.textContent && consecutiveOperator && currentlyHeldValue === initialValue) {
     allowMoreThanOneDigit = false
@@ -101,6 +108,7 @@ const operate = (operand1, operator, operand2) => {
 //populateDisplay function
 function populateDisplay (e, value) {
   consecutiveOperator = false
+
   const toBeDisplayed = e ? e.target.value : value
 
   if (displayDiv.textContent === '0' && currentlyHeldValue === 0){
@@ -115,5 +123,4 @@ function populateDisplay (e, value) {
     currentlyHeldValue = toBeDisplayed
     return displayDiv.textContent = currentlyHeldValue 
   }
-
 }
