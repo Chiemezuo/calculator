@@ -19,6 +19,12 @@ body {
   height: 150px;
   background-color: #d9ffea;
   border-radius: 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-right: 8px;
+  padding-bottom: 8px;
+  font-size: 48px;
 }
 
 .calc-keys {
