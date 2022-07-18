@@ -53,7 +53,7 @@ button {
   background-color: #52F118;
 }
 
-.action {
+.action, .operate, .dot {
   background-color: #ffec47;
 }
 
