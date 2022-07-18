@@ -5,6 +5,17 @@ let operator;
 let allowMoreThanOneDigit = true;
 let consecutiveOperator = true
 
+//clear button
+const clearButton = document.querySelector('.clear')
+clearButton.addEventListener('click', function(){
+  displayDiv.textContent = '0'
+  currentlyHeldValue = 0
+  initialValue = 0
+  allowMoreThanOneDigit = true
+  consecutiveOperator = true
+  operator = ''
+})
+
 //number buttons
 const numberButtons = document.querySelectorAll('.number')
 for (const button of numberButtons) {
