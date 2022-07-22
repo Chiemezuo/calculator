@@ -5,16 +5,33 @@ let operator;
 let allowMoreThanOneDigit = true;
 let consecutiveOperator = true
 
+//keyboard support
+window.addEventListener('keydown', function(e){
+  if (['1','2','3','4','5','6','7','8','9','0'].includes(e.key)){
+    return populateDisplay(null, String(e.key))
+  }
+  //to add keyboard support in a way that matches the setOperation syntax
+  if (['+','-','=','/','.','*'].includes(e.key)){
+    return setOperation({
+      target: {
+        textContent: e.key
+      }
+    })
+  }
+})
+
 //backspace button
 const backspace = document.querySelector('.backspace')
-backspace.addEventListener('click', function(){
+backspace.addEventListener('click', backspaceErase)
+
+function backspaceErase(){
   displayDiv.textContent = displayDiv.textContent.substring(0, displayDiv.textContent.length - 1)
   currentlyHeldValue = Number.parseInt(String(currentlyHeldValue).substring(0, currentlyHeldValue.length - 1))
   if (!currentlyHeldValue){
     currentlyHeldValue = 0;
     displayDiv.textContent = '0'
   }
-})
+}
 
 //clear button
 const clearButton = document.querySelector('.clear')
