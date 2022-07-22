@@ -5,6 +5,17 @@ let operator;
 let allowMoreThanOneDigit = true;
 let consecutiveOperator = true
 
+//backspace button
+const backspace = document.querySelector('.backspace')
+backspace.addEventListener('click', function(){
+  displayDiv.textContent = displayDiv.textContent.substring(0, displayDiv.textContent.length - 1)
+  currentlyHeldValue = Number.parseInt(String(currentlyHeldValue).substring(0, currentlyHeldValue.length - 1))
+  if (!currentlyHeldValue){
+    currentlyHeldValue = 0;
+    displayDiv.textContent = '0'
+  }
+})
+
 //clear button
 const clearButton = document.querySelector('.clear')
 clearButton.addEventListener('click', function(){
